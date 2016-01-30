@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Escalators.unity
+- path: Assets/Scenes/Tain_loin.unity
   isLoaded: 1
   isActive: 1
