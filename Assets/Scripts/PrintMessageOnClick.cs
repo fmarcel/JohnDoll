@@ -1,24 +1,52 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PrintMessageOnClick : MonoBehaviour {
+public class PrintMessageOnClick : MonoBehaviour
+{
+    private bool isTrigger;
+    public TextMesh text;
 
-    public string JohnName = "perso";
-    private bool isInTrigger;
+
 	// Use this for initialization
-	void Start () {
-        isInTrigger = false;
+	void Start ()
+    {
+        isTrigger = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetButtonDown("Fire1") && isInTrigger && clickOnObj())
+	void Update ()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit) && !isTrigger)
         {
-            print("hey");
+            isTrigger = true;
+            StartCoroutine(AnimateText("Wake up, John"));
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    IEnumerator AnimateText(string strComplete)
+    {
+        int i = 0;
+        text.text = "";
+        while (i < 7)
+        {
+            text.text += strComplete[i++];
+            yield return new WaitForSeconds(0.1F);
+        }
+
+        yield return new WaitForSeconds(0.7f);
+
+        while (i < strComplete.Length)
+        {
+            text.text += strComplete[i++];
+            yield return new WaitForSeconds(0.2F);
+        }
+        yield return new WaitForSeconds(1);
+        text.text = "";
+    }
+
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         isInTrigger = true;
     }
@@ -26,7 +54,7 @@ public class PrintMessageOnClick : MonoBehaviour {
     void OnTriggerExit2D(Collider2D other)
     {
         isInTrigger = false;
-    }
+    }*/
 
     private bool clickOnObj()
     {
@@ -34,7 +62,7 @@ public class PrintMessageOnClick : MonoBehaviour {
         RaycastHit2D hit;
         hit = Physics2D.Raycast(new Vector2(ray.origin.x, ray.origin.y), new Vector2(0, 0));
         if (hit.collider != null)
-            if (hit.collider.name == GetComponent<Collider2D>().name || hit.collider.name == JohnName)
+            if (hit.collider.name == GetComponent<Collider2D>().name)
                 return true;
         return false;
     }

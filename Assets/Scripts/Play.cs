@@ -15,6 +15,7 @@ public class Play : MonoBehaviour
 	{
 		if(Input.GetMouseButton(0))
 		{
+            GetComponent<AudioSource>().Play();
 			Application.LoadLevel("bedroom");
 		}
 	}

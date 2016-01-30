@@ -21,6 +21,7 @@ public class ClickEvent : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 anim.SetBool("clicked", true);
+                GetComponent<AudioSource>().Play();
             }
         }
         if (Input.GetMouseButtonUp(0))
