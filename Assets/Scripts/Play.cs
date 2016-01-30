@@ -14,11 +14,6 @@ public class Play : MonoBehaviour
 	void Update () 
 	{
 		if(Input.GetMouseButton(0))
-<<<<<<< HEAD
-		{
-            GetComponent<AudioSource>().Play();
-			Application.LoadLevel("bedroom");
-=======
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit;
@@ -26,7 +21,6 @@ public class Play : MonoBehaviour
             if (hit.collider != null)
                 if (hit.collider == GetComponent<Collider2D>())
                     Application.LoadLevel("bedroom");
->>>>>>> adce7d9215bec22b9e3242c21ba92e77bfb34e0b
 		}
 	}
 }
