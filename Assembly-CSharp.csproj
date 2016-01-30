@@ -45,9 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ClickEvent.cs" />
+     <Compile Include="Assets\Scripts\FadeInOut.cs" />
      <Compile Include="Assets\Scripts\MoveCloud.cs" />
      <Compile Include="Assets\Scripts\MoveHouses.cs" />
      <Compile Include="Assets\Scripts\MoveMist.cs" />
+     <Compile Include="Assets\Scripts\ParticleMovement.cs" />
+     <Compile Include="Assets\Scripts\Play.cs" />
      <Compile Include="Assets\Scripts\ScrollDown.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
