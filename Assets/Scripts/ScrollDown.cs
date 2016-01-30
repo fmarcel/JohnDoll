@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScrollDown : MonoBehaviour 
 {
-
+    public float speed = 0.05f;
 	// Use this for initialization
 	void Start () 
 	{
@@ -14,6 +14,6 @@ public class ScrollDown : MonoBehaviour
 	void Update () 
 	{
 		if(transform.position.y > -16)
-			transform.position = new Vector3(transform.position.x, transform.position.y-0.65f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
 	}
 }
