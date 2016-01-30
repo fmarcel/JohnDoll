@@ -5,12 +5,18 @@ public class PrintMessageOnClick : MonoBehaviour
 {
     private bool isTrigger;
     public TextMesh text;
-
+    public AudioSource alarmClockBeep;
+    public GameObject johnSleeping;
+    public GameObject johnSitting;
+    public AudioSource snore;
+    public GameObject triggerWardrobe;
+    public TextMesh getDress;
 
 	// Use this for initialization
 	void Start ()
     {
         isTrigger = false;
+        alarmClockBeep.Stop();
 	}
 	
 	// Update is called once per frame
@@ -44,6 +50,18 @@ public class PrintMessageOnClick : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         text.text = "";
+
+        johnSleeping.SetActive(false);
+
+        yield return new WaitForSeconds(0.2f);
+
+        johnSitting.SetActive(true);
+        snore.Play();
+
+        triggerWardrobe.SetActive(true);
+
+        getDress.text = "Get dress, John";
+
     }
 
     /*void OnTriggerEnter2D(Collider2D other)
