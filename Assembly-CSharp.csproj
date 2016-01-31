@@ -48,6 +48,8 @@
      <Compile Include="Assets\Scripts\ClickEvent.cs" />
      <Compile Include="Assets\Scripts\DisplayEventPointer.cs" />
      <Compile Include="Assets\Scripts\FadeInOut.cs" />
+     <Compile Include="Assets\Scripts\Fader.cs" />
+     <Compile Include="Assets\Scripts\GettingDressed.cs" />
      <Compile Include="Assets\Scripts\IntroBedroom.cs" />
      <Compile Include="Assets\Scripts\Metro_move_background.cs" />
      <Compile Include="Assets\Scripts\Metro_move_foregroung.cs" />
@@ -60,7 +62,9 @@
      <Compile Include="Assets\Scripts\PrintMessageOnClick.cs" />
      <Compile Include="Assets\Scripts\RendererExtensions.cs" />
      <Compile Include="Assets\Scripts\ScrollDown.cs" />
+     <Compile Include="Assets\Scripts\ScrollLeft.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
+     <Compile Include="Assets\Scripts\StreetScroll.cs" />
      <None Include="Assets\Font\Press_Start_2P\OFL.txt" />
      <None Include="Assets\Font\Roboto\LICENSE.txt" />
      <None Include="Assets\Font\Dosis\OFL.txt" />

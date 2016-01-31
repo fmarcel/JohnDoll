@@ -13,6 +13,7 @@ public class GettingDressed : MonoBehaviour
     public AudioSource getCloth;
     public GameObject johnDressed;
     public GameObject getDressedOrder;
+    public SpriteRenderer fade;
 
 	// Use this for initialization
 	void Start ()
@@ -55,6 +56,12 @@ public class GettingDressed : MonoBehaviour
         openWardrobe.SetActive(false);
         johnDressed.SetActive(true);
         yield return new WaitForSeconds(1.5f);
-        
+        for (float a = 0f; a < 1; a += 0.005f)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, a);
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        // CHANGEMENT DE SCENE
     }
 }

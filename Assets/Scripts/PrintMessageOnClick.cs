@@ -10,12 +10,14 @@ public class PrintMessageOnClick : MonoBehaviour
     public GameObject johnSitting;
     public AudioSource snore;
     public GameObject triggerWardrobe;
+    public GameObject wardrobePointerEvent;
     public TextMesh getDress;
 
 	// Use this for initialization
 	void Start ()
     {
         isTrigger = false;
+        alarmClockBeep.Stop();
 	}
 	
 	// Update is called once per frame
@@ -25,7 +27,6 @@ public class PrintMessageOnClick : MonoBehaviour
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit) && !isTrigger)
         {
-            alarmClockBeep.Stop();
             isTrigger = true;
             StartCoroutine(AnimateText("Wake up, John"));
         }
@@ -58,9 +59,12 @@ public class PrintMessageOnClick : MonoBehaviour
         johnSitting.SetActive(true);
         snore.Play();
 
-        triggerWardrobe.SetActive(true);
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+            wardrobePointerEvent.SetActive(true);
+        else
+            triggerWardrobe.SetActive(true);
 
-        getDress.text = "Get dressed, John";
+        getDress.text = "Get dress, John";
 
     }
 

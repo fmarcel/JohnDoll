@@ -1,4 +1,1 @@
-sceneSetups:
-- path: Assets/Scenes/Tain_loin.unity
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
