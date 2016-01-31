@@ -16,6 +16,7 @@ public class PrintMessageOnClick : MonoBehaviour
 	void Start ()
     {
         isTrigger = false;
+        alarmClockBeep.Stop();
 	}
 	
 	// Update is called once per frame
@@ -25,7 +26,6 @@ public class PrintMessageOnClick : MonoBehaviour
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit) && !isTrigger)
         {
-            alarmClockBeep.Stop();
             isTrigger = true;
             StartCoroutine(AnimateText("Wake up, John"));
         }
@@ -60,7 +60,7 @@ public class PrintMessageOnClick : MonoBehaviour
 
         triggerWardrobe.SetActive(true);
 
-        getDress.text = "Get dressed, John";
+        getDress.text = "Get dress, John";
 
     }
 
