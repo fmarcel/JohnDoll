@@ -31,7 +31,7 @@ public class ScrollingScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (firstSee == false)
         {
             if (backgroundPart.FirstOrDefault().GetComponent<Renderer>().IsVisibleFrom(Camera.main) == true)
