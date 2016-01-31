@@ -10,6 +10,7 @@ public class PrintMessageOnClick : MonoBehaviour
     public GameObject johnSitting;
     public AudioSource snore;
     public GameObject triggerWardrobe;
+    public GameObject wardrobePointerEvent;
     public TextMesh getDress;
 
 	// Use this for initialization
@@ -58,7 +59,10 @@ public class PrintMessageOnClick : MonoBehaviour
         johnSitting.SetActive(true);
         snore.Play();
 
-        triggerWardrobe.SetActive(true);
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+            wardrobePointerEvent.SetActive(true);
+        else
+            triggerWardrobe.SetActive(true);
 
         getDress.text = "Get dressed, John";
 
