@@ -23,14 +23,14 @@ public class WalkAndScroll : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
             lastClick.x = Camera.main.ScreenPointToRay(Input.mousePosition).origin.x;
-        if (player.transform.position.x > startX + dist && transform.position.x > -27f && player.transform.position.x < lastClick.x)
+        if (player.transform.position.x > startX + dist && transform.position.x > -15f && player.transform.position.x < lastClick.x)
         {
             transform.position = new Vector3(transform.position.x - speed *  Time.deltaTime, transform.position.y, transform.position.z);
             lastClick.x -= speed *  Time.deltaTime;
             if (lastClick.x < player.transform.position.x)
                 lastClick.x = player.transform.position.x;
         }
-        else if (player.transform.position.x < startX - dist && transform.position.x < 28f && player.transform.position.x > lastClick.x)
+        else if (player.transform.position.x < startX - dist && transform.position.x < 40f && player.transform.position.x > lastClick.x)
         {
             transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
             lastClick.x += speed * Time.deltaTime;
